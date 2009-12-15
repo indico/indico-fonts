@@ -33,9 +33,11 @@ if __name__ == '__main__':
           download_url = "http://cern.ch/indico/download-beta.html",
           platforms = ["any"],
           long_description = "Extra resources for Indico, such as fonts",
-          license = "http://www.gnu.org/licenses/gpl-2.0.txt",
+          license = "Several",
           zip_safe = False,
           packages = find_packages(),
           package_data = {'': ['*.ttf'] },
           include_package_data = True,
+          classifiers = ["License :: Other/Proprietary License",
+                         "Topic :: Text Processing :: Fonts"]
           )
