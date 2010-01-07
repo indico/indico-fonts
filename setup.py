@@ -36,7 +36,7 @@ if __name__ == '__main__':
           license = "Several",
           zip_safe = False,
           packages = find_packages(),
-          package_data = {'': ['*.ttf'] },
+          package_data = {'': ['*.ttf','*.ttc'] },
           include_package_data = True,
           classifiers = ["License :: Other/Proprietary License",
                          "Topic :: Text Processing :: Fonts"]
