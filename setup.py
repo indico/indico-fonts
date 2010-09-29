@@ -25,7 +25,7 @@ if __name__ == '__main__':
 
     setup(name = "cds-indico-extras",
 
-          version = '0.1',
+          version = '0.2',
           description = "Indico - Extra resources",
           author = "Indico Team",
           author_email = "indico-project@cern.ch",
