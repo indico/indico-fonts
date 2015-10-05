@@ -1,44 +1,36 @@
-# -*- coding: utf-8 -*-
-##
-## $Id$
-##
-## This file is part of CDS Indico.
-## Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007 CERN.
-##
-## CDS Indico is free software; you can redistribute it and/or
-## modify it under the terms of the GNU General Public License as
-## published by the Free Software Foundation; either version 2 of the
-## License, or (at your option) any later version.
-##
-## CDS Indico is distributed in the hope that it will be useful, but
-## WITHOUT ANY WARRANTY; without even the implied warranty of
-## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-## General Public License for more details.
-##
-## You should have received a copy of the GNU General Public License
-## along with CDS Indico; if not, write to the Free Software Foundation, Inc.,
-## 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
+# This file is part of Indico.
+# Copyright (C) 2002 - 2015 European Organization for Nuclear Research (CERN).
+#
+# Indico is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as
+# published by the Free Software Foundation; either version 3 of the
+# License, or (at your option) any later version.
+#
+# Indico is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Indico; if not, see <http://www.gnu.org/licenses/>.
 
-from setuptools import setup, find_packages
+from __future__ import unicode_literals
 
-if __name__ == '__main__':
+from setuptools import setup
 
-    setup(name = "cds-indico-extras",
-
-          version = '0.2',
-          description = "Indico - Extra resources",
-          author = "Indico Team",
-          author_email = "indico-project@cern.ch",
-          url = "http://cern.ch/indico",
-          download_url = "http://cern.ch/indico/download-beta.html",
-          platforms = ["any"],
-          long_description = "Extra resources for Indico, such as fonts",
-          license = "Several",
-          zip_safe = False,
-          packages = find_packages(),
-          namespace_packages = ['indico'],
-          package_data = {'': ['*.ttf','*.ttc'] },
-          include_package_data = True,
-          classifiers = ["License :: Other/Proprietary License",
-                         "Topic :: Text Processing :: Fonts"]
-          )
+setup(
+    name="indico-fonts",
+    version='1.0',
+    url='http://indico.github.io',
+    license='Several',
+    author='Indico Team',
+    author_email='indico-project@cern.ch',
+    description='Indico - Binary fonts',
+    platforms=['any'],
+    zip_safe=False,
+    packages=['indico_fonts'],
+    package_data={b'indico_fonts': (b'*.ttf', b'*.ttc')},
+    include_package_data=True,
+    classifiers=['License :: Other/Proprietary License',
+                 'Topic :: Text Processing :: Fonts']
+)
