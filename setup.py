@@ -24,7 +24,7 @@ setup(
     url='http://indico.github.io',
     license='Several',
     author='Indico Team',
-    author_email='indico-project@cern.ch',
+    author_email='indico-team@cern.ch',
     description='Indico - Binary fonts',
     platforms=['any'],
     zip_safe=False,
