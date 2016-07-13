@@ -1,0 +1,11 @@
+The following files are part of the Libertine and Biolinum fonts version 5.3.0
+and are licensed under the term of the SIL Open Font License Version 1.1, see
+LICENSE-Libertine_Biolinum_v5 for the license text.
+
+  LinBiolinum_RB.otf
+  LinBiolinum_RI.otf
+  LinBiolinum_R.otf
+  LinLibertine_RBI.otf
+  LinLibertine_RB.otf
+  LinLibertine_RI.otf
+  LinLibertine_R.otf
