@@ -9,3 +9,7 @@ LICENSE-Libertine_Biolinum_v5 for the license text.
   LinLibertine_RB.otf
   LinLibertine_RI.otf
   LinLibertine_R.otf
+  LinLibertine_RBIah.ttf
+  LinLibertine_RBah.ttf
+  LinLibertine_RIah.ttf
+  LinLibertine_Rah.ttf
