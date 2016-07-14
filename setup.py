@@ -20,7 +20,7 @@ from setuptools import setup
 
 setup(
     name="indico-fonts",
-    version='1.0',
+    version='1.1',
     url='http://indico.github.io',
     license='Several',
     author='Indico Team',
