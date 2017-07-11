@@ -21,7 +21,7 @@ from setuptools import setup
 setup(
     name="indico-fonts",
     version='1.1',
-    url='http://indico.github.io',
+    url='https://getindico.io',
     license='Several',
     author='Indico Team',
     author_email='indico-team@cern.ch',
