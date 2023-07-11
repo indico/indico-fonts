@@ -1,0 +1,74 @@
+name: PyPI release 🐍 📦
+
+on:
+  push:
+    tags: [v*]
+
+jobs:
+  build:
+    name: Build package 📦
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        name: Set up Python 🐍
+        with:
+          python-version: '3.11'
+      - name: Check version 🔍
+        run: python .github/utils/check_version.py "${GITHUB_REF#refs/tags/v}"
+      - name: Install pypa/build 🔧
+        run: pip install --user build
+      - name: Build wheel and sdist 🏗
+        run: >-
+          python -m
+          build
+          --sdist
+          --wheel
+          --outdir dist/
+          .
+      - uses: actions/upload-artifact@v3
+        name: Upload build artifacts 📦
+        with:
+          path: ./dist
+  create-github-release:
+    name: Create GitHub release 🐙
+    # Upload the sdist and wheels to a GitHub release. They remain
+    # available as build artifacts for a while as well.
+    needs: build
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v3
+        name: Download build artifacts 📦
+      - name: Create draft release 🐙
+        run: >-
+          gh release create
+          --draft
+          --repo ${{ github.repository }}
+          --title ${{ github.ref_name }}
+          ${{ github.ref_name }}
+          artifact/*
+        env:
+          GH_TOKEN: ${{ github.token }}
+  publish-pypi:
+    name: Publish 🚀
+    needs: build
+    # Wait for approval before attempting to upload to PyPI. This allows reviewing the
+    # files in the draft release.
+    environment: 'publish'
+    runs-on: ubuntu-22.04
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v3
+      # Try uploading to Test PyPI first, in case something fails.
+      - name: Publish to Test PyPI 🧪
+        uses: pypa/gh-action-pypi-publish@v1.8.7
+        with:
+          repository-url: https://test.pypi.org/legacy/
+          packages-dir: artifact/
+      - name: Publish to PyPI 🚀
+        uses: pypa/gh-action-pypi-publish@v1.8.7
+        with:
+          packages-dir: artifact/
