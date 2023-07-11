@@ -10,8 +10,8 @@ setup(
     description='Indico - Binary fonts',
     platforms=['any'],
     zip_safe=False,
-    packages=[b'indico_fonts'],
-    package_data={b'indico_fonts': [b'*.otf', b'*.ttc', b'*.ttf']},
+    packages=['indico_fonts'],
+    package_data={'indico_fonts': ['*.otf', '*.ttc', '*.ttf']},
     include_package_data=True,
     classifiers=['License :: Other/Proprietary License',
                  'Topic :: Text Processing :: Fonts']
