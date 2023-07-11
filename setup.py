@@ -1,8 +1,8 @@
 from setuptools import setup
 
 setup(
-    name="indico-fonts",
-    version='1.1',
+    name='indico-fonts',
+    version='1.2',
     url='https://getindico.io',
     license='Several',
     author='Indico Team',
